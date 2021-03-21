@@ -1,11 +1,11 @@
 import socket
-
+import termcolor
 class Client:
     def __init__(self, ip, port):
         self.ip = ip
         self.port = port
     def ping(self):
-        print('OK')
+        print('OK!')
     def advanced_ping(self):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         try:
@@ -33,3 +33,8 @@ class Client:
 
         # Return the response
         return 'From server: ' + response
+    def debug_talk(self, msg):
+        message = str(msg)
+        response = self.talk(msg)
+        termcolor.cprint(message, 'blue')
+        termcolor.cprint(response, 'yellow')
