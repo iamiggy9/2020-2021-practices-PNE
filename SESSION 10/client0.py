@@ -22,7 +22,7 @@ class Client:
         s.connect((self.ip, self.port))
 
         # Send data.
-        print('Fromserver :', response)
+        print('To server :', msg)
         s.send(msg.encode())
 
         # Receive data
@@ -38,3 +38,4 @@ class Client:
         response = self.talk(msg)
         termcolor.cprint(message, 'blue')
         termcolor.cprint(response, 'yellow')
+
