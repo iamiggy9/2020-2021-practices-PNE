@@ -51,26 +51,31 @@ while True:
     formatted_message = server_utils.format_command(msg)
 
     formatted_message = formatted_message.split(' ')
-    if len(formatted_message) == 1:
+    try:
+      if len(formatted_message) == 1:
         command = formatted_message[0]
-    else:
+      else:
         command = formatted_message[0]
         argument = formatted_message[1]
-    if command == 'PING':
+      if command == 'PING':
        server_utils.ping(cs)
 
-    elif command == 'GET':
+      elif command == 'GET':
         server_utils.get(cs, list_sequences,argument)
-    elif command == 'INFO' :
+      elif command == 'INFO' :
         server_utils.info(cs,argument)
-    elif command == 'COMP':
+      elif command == 'COMP':
         server_utils.comp(cs,argument)
-
-
-    #else:
-
-       #response = 'Not available command'
-       #cs.send(str(response).encode())
+      elif command == 'REV':
+        server_utils.rev(cs, argument)
+      elif command == 'GENE':
+        server_utils.gene(cs, argument)
+    except ConnectionError:
+        response = 'Not available command'
+        cs.send(str(response).encode())
+    except ZeroDivisionError:
+        response = 'Not available command'
+        cs.send(str(response).encode())
 
 
 

@@ -46,45 +46,31 @@ class Seq:
         return dictionary
 
     @staticmethod
-    def reverse(self):
+    def reverse(seq_rev):
         rev_seq = ''
-        if self.strbases == Seq.NULL:
-            return self.strbases
-        else:
-            for e in self.strbases[::-1]:
-                if e not in ["A", "C", "T", "G"]:
-                    rev_seq = Seq.INVALID
-                    return rev_seq
-
-                else:
-                    rev_seq += e
+        for e in seq_rev[::-1]:
+          rev_seq += e
         return rev_seq
     @staticmethod
-    def complement(self):
-        comp_seq = ""
-        if self.strbases == Seq.NULL:
-            return self.strbases
-        else:
-            for e in self.strbases:
-                if e not in ["A", "C", "T", "G"]:
-                    comp_seq = Seq.INVALID
-                    return comp_seq
-                else:
-                    if e == "A":
-                        comp_seq += "T"
-                    if e == "T":
-                        comp_seq += "A"
-                    if e == "C":
-                        comp_seq += "G"
-                    if e == "G":
-                        comp_seq += "C"
-            return comp_seq
+    def complement(seq_comp):
+        BLANK = ''
+        for e in seq_comp:
+            if e == "A":
+                BLANK += "T"
+            if e == "T":
+                BLANK += "A"
+            if e == "C":
+                BLANK += "G"
+            if e == "G":
+                BLANK += "C"
+        return BLANK
 
-    def read_fasta(self, filename):
-            file_lines = pathlib.Path(filename).read_text().split("\n")
+    @staticmethod
+    def read_fasta(filename):
+            file_lines = pathlib.Path('../P3/' + str(filename) + '.txt').read_text().split("\n")
             body = (file_lines[1:])
-            self.strbases = ''.join(body)
-            return self
+            strbases = ''.join(body)
+            return strbases
 
 
 
