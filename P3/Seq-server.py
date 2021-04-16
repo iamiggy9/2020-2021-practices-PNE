@@ -59,7 +59,6 @@ while True:
         argument = formatted_message[1]
       if command == 'PING':
        server_utils.ping(cs)
-
       elif command == 'GET':
         server_utils.get(cs, list_sequences,argument)
       elif command == 'INFO' :
