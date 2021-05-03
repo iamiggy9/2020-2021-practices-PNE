@@ -81,7 +81,17 @@ class TestHandler(http.server.BaseHTTPRequestHandler): # this class is inside th
         elif path_name=='/get':
             number_sequence=arguments['sequence'][0]
             contents = su.get(LIST_SEQUENCES,number_sequence)
-        elif path_name=='/gene':
+        elif path_name == '/operation':
+            sequence = arguments['sequence'][0]
+            operation = arguments['operation'][0]
+            if operation=='info':
+                contents=su.info(sequence)
+            elif operation=='rev':
+                contents = su.rev(sequence)
+            elif operation == 'comp':
+                contents = su.comp(sequence)
+
+        elif path_name =='/gene':
             gene = arguments['gene'][0]
             contents = su.gene(gene)
         else:

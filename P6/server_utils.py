@@ -65,6 +65,57 @@ def gene(seq_name):
   return contents
 
 
+def info(sequence):
+    list_bases = ["A", "C", "T", "G"]
+    sequence = Seq(sequence.replace('"', ""))
+    t_l = Seq.len(sequence)
+    count_list = []
+    percentage_list = []
+    for base in list_bases:
+        count_list.append(sequence.count_base(base))
+    for i in range(0, len(count_list)):
+        percentage_list.append(count_list[i] * 100 / t_l)
+
+    result = {"length": t_l, "bases": {
+        "A": str(count_list[0]) + " (" + str(percentage_list[0]) + "%)",
+        "C": str(count_list[1]) + " (" + str(percentage_list[1]) + "%)",
+        "T": str(count_list[2]) + " (" + str(percentage_list[2]) + "%)",
+        "G": str(count_list[3]) + " (" + str(percentage_list[3]) + "%)"
+    }}
+    context = {'Sequence': sequence, 'Operation': 'info', 'Result': result}
+    contents = read_template_html_file('./html/operation.html').render(context=context)
+    return contents
+
+
+def comp(sequence):
+    BLANK = ''
+    for e in sequence:
+        if e == "A":
+            BLANK += "T"
+        if e == "T":
+            BLANK += "A"
+        if e == "C":
+            BLANK += "G"
+        if e == "G":
+            BLANK += "C"
+    context = {'Sequence': sequence, 'Operation': 'comp', 'Result': BLANK}
+    contents = read_template_html_file('./html/operation.html').render(context=context)
+    return contents
+
+
+def rev(sequence):
+    rev_seq = ''
+    for e in str(sequence)[::-1]:
+      rev_seq += e
+
+    context = {'Sequence': sequence,'Operation': 'rev','Result':rev_seq}
+    contents = read_template_html_file('./html/operation.html').render(context=context)
+    return contents
+
+
+
+
+
 
 
 

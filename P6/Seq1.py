@@ -45,25 +45,8 @@ class Seq:
         dictionary = dict(zip(bases, count_bases))
         return dictionary
 
-    @staticmethod
-    def reverse(seq_rev):
-        rev_seq = ''
-        for e in seq_rev[::-1]:
-          rev_seq += e
-        return rev_seq
-    @staticmethod
-    def complement(seq_comp):
-        BLANK = ''
-        for e in seq_comp:
-            if e == "A":
-                BLANK += "T"
-            if e == "T":
-                BLANK += "A"
-            if e == "C":
-                BLANK += "G"
-            if e == "G":
-                BLANK += "C"
-        return BLANK
+
+
     @staticmethod
     def take_out_first_line(seq):
         return seq[seq.find('\n') + 1:].replace('\n','')
@@ -72,6 +55,7 @@ class Seq:
     def read_fasta(self,filename):
             self.strbases =Seq.take_out_first_line(Path(filename).read_text())
             print(self.strbases)
+
 
 
 

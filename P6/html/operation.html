@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Seq server</title>
+  </head>
+  <body>
+    <h1>Sequence</h1>
+    <p>{{context.Sequence}}</p>
+    <h1>Operation</h1>
+    <p>{{context.Operation}}</p>
+    <h1>Result</h1>
+    {% if context.Operation == 'info' %}
+    <p>Total length: {{context.Result.length}}</p>
+    <p>A:{{context.Result.bases.A}}</p>
+    <p>C:{{context.Result.bases.C}}</p>
+    <p>T:{{context.Result.bases.T}}</p>
+    <p>G:{{context.Result.bases.G}}</p>
+
+    {% else %}
+    <p>{{context.Result}}</p>
+    {% endif %}
+    <a href="/">Main page</a></p>
+  </body>
+</html>

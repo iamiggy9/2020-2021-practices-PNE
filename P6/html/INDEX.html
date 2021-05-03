@@ -30,6 +30,15 @@
         {% endfor %}
          <select>
         <input type="submit" value="GENE">
-    <form>
-  <body>
-</html>
+    </form>
+  <hr>
+        <form action="operation" method="get">
+            Write a sequence:   <input type="text" name="sequence"> <br>
+            Select operation:
+            <input type="radio" name="operation" value="Info">Info
+            <input type="radio" name="operation" value="Comp"> Comp
+            <input type="radio" name="operation" value="Rev"> Rev
+          <input type="submit" value="OPERATE">
+        </form>
+      </body>
+    </html>
