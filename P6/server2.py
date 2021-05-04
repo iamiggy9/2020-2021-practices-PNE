@@ -11,7 +11,7 @@ import server_utils as su
 
 
 # Define the Server's port
-PORT = 6555
+PORT = 6444
 LIST_SEQUENCES = ['ACTGGATAGCA','AACTCCCCCCCCCCCC','ACTGG', 'ATGGGGGCA', 'TTTGAAAAAGGTA']
 LIST_GENES=['ADA','FRAT1','FXN','RNU6_269P','U5']
 HTML_ASSETS = "./HTML/"
@@ -84,11 +84,11 @@ class TestHandler(http.server.BaseHTTPRequestHandler): # this class is inside th
         elif path_name == '/operation':
             sequence = arguments['sequence'][0]
             operation = arguments['operation'][0]
-            if operation=='info':
+            if operation=='Info':
                 contents=su.info(sequence)
-            elif operation=='rev':
+            elif operation=='Rev':
                 contents = su.rev(sequence)
-            elif operation == 'comp':
+            elif operation == 'Comp':
                 contents = su.comp(sequence)
 
         elif path_name =='/gene':

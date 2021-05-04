@@ -82,7 +82,7 @@ def info(sequence):
         "T": str(count_list[2]) + " (" + str(percentage_list[2]) + "%)",
         "G": str(count_list[3]) + " (" + str(percentage_list[3]) + "%)"
     }}
-    context = {'Sequence': sequence, 'Operation': 'info', 'Result': result}
+    context = {'Sequence': sequence, 'Operation': 'Info', 'Result': result}
     contents = read_template_html_file('./html/operation.html').render(context=context)
     return contents
 
@@ -98,7 +98,7 @@ def comp(sequence):
             BLANK += "G"
         if e == "G":
             BLANK += "C"
-    context = {'Sequence': sequence, 'Operation': 'comp', 'Result': BLANK}
+    context = {'Sequence': sequence, 'Operation': 'Comp', 'Result': BLANK}
     contents = read_template_html_file('./html/operation.html').render(context=context)
     return contents
 
@@ -108,10 +108,9 @@ def rev(sequence):
     for e in str(sequence)[::-1]:
       rev_seq += e
 
-    context = {'Sequence': sequence,'Operation': 'rev','Result':rev_seq}
+    context = {'Sequence': sequence,'Operation': 'Rev','Result':rev_seq}
     contents = read_template_html_file('./html/operation.html').render(context=context)
     return contents
-
 
 
 
