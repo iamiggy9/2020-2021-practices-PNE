@@ -34,16 +34,23 @@ class Seq:
         else:
             return len(self.strbases)
 
-    def count_base(self, base):
-        return self.strbases.count(base)
+    def count_base(self):
+        a,c,g,t = 0,0,0,0
+        if not(self.strbases == Seq.NULL)and not(self.strbases == Seq.INVALID):
+            for ch in self.strbases:
+                if ch == 'A':
+                    a += 1
+                elif ch == 'G':
+                    g += 1
+                elif ch == 'C':
+                    c += 1
+                elif ch == 'T':
+                    t += 1
+        return a,c,g,t
 
     def count(self):
-        bases = ["A", "C", "T", "G"]
-        count_bases = []
-        for base in bases:
-            count_bases.append(self.count_base(base))
-        dictionary = dict(zip(bases, count_bases))
-        return dictionary
+       a,c,g,t = self.count_base()
+       return {'A': a,'C': c ,'G': g,'T': t}
     def percentage_base(self,count_bases, seq_len):
         a = 'A: ' + str(round(count_bases[0] / seq_len*100, 2)) + '%'
         c = 'C: ' + str(round(count_bases[1] / seq_len * 100, 2)) + '%'

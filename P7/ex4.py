@@ -26,7 +26,7 @@ try:
     connection.request('GET', ENDPOINT + id + PARAMETERS)
     response = connection.getresponse()
     if response.status == 200:
-        response_dict = json.load(response.read().decode())
+        response_dict = json.loads(response.read().decode())
         #print(json.dumps(response, indent=4, sort_keys=True))
         sequence = Seq1.Seq(response_dict['seq'])
         s_length=sequence.len()

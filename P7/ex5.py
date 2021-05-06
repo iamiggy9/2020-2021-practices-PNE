@@ -30,16 +30,16 @@ try:
         connection.request('GET',ENDPOINT + id + PARAMETERS)
         response = connection.getresponse()
         if response.status == 200:
-            response_dict=json.load(response.read().decode())
+            response_dict=json.loads(response.read().decode())
             #print(json.dumps(response, indent=4, sort_keys=True))
             sequence = Seq1.Seq(response_dict['seq'])
             s_length = sequence.len()
             percentages = sequence.percentage_base(sequence.count_base(),s_length)
             most_frequent_base=sequence.frequent_base(sequence.count())
-            print_colored('GENE', key, 'yellow')
-            print_colored('Total length',s_length, 'yellow')
+            print_colored('GENE ', key, 'yellow')
+            print_colored('Total length ',s_length, 'yellow')
         for value in percentages.items():
             print_colored(key + ":", value, 'blue')
-        print_colored('Most frequent base',most_frequent_base, 'yellow')
+        print_colored('Most frequent base ',most_frequent_base, 'yellow')
 except KeyError:
     print('The gene is not nt inside our dictionary.Choose one od the following: ', list(DICT_GENES.keys()))
