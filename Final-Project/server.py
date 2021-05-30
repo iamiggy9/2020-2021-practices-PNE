@@ -1,43 +1,22 @@
 import http.server
 import socketserver
 import termcolor
-
-from urllib.parse import urlparse, parse_qs
+import colorama
 import server_utils as su
-# DYNAMIC WEBPAGES, webpages where the user can interact with (provide content, post comments). And the server is providing content to the user according to certain parameters
-# we will see how to send information from the server to the user (send the html information from the server. Instead of having lots of html files for each webpage we would have one html template).
-
+import s2 as s_u
+from urllib.parse import urlparse, parse_qs
+import http.client
+import json
 
 
 
 # Define the Server's port
-PORT = 6444
-LIST_SEQUENCES = ['ACTGGATAGCA','AACTCCCCCCCCCCCC','ACTGG', 'ATGGGGGCA', 'TTTGAAAAAGGTA']
-LIST_GENES=['ADA','FRAT1','FXN','RNU6_269P','U5']
-HTML_ASSETS = "./HTML/"
+PORT =8080
 
-BASES_INFORMATION = {
-    "A":{"link": "https//en.wikipedia.org/wiki/Adenine",
-         "formula": "C5H5N5",
-         "name": "ADENINE",
-         "color": "green"
-         },
-    "C":{"link": "https//en.wikipedia.org/wiki/Citosine",
-         "formula": "C5H5N5",
-         "name": "CYTOSINE",
-         "color": "yellow"
-         },
-    "G":{"link": "https//en.wikipedia.org/wiki/Guanine",
-         "formula": "C5H5N5",
-         "name": "GUANINE",
-         "color":"lightblue"
-         },
-    "T":{"link": "https//en.wikipedia.org/wiki/Thymine",
-         "formula": "C5H5N5",
-         "name": "THYMINE",
-         "color": "lightpink"
-         },
-}
+HTML_ASSETS = "./HTML/"
+SERVER = 'rest.ensembl.org'
+Parameters = "?content-type=application/json"
+
 
 # -- This is for preventing the error: "Port already in use"
 socketserver.TCPServer.allow_reuse_address = True
@@ -50,7 +29,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler): # this class is inside th
     def do_GET(self):
         """This method is called whenever the client invokes the GET method
         in the HTTP protocol request"""
-
+        connection = http.client.HTTPConnection(SERVER)
         # We just print a message
         print("GET received! Request line:")
 
@@ -70,17 +49,14 @@ class TestHandler(http.server.BaseHTTPRequestHandler): # this class is inside th
         print("Resource requested: ", path_name)
         print("Parameters: ", arguments)
         context = {}
-        if self.path == "/":
-            context['n_sequences'] = len(LIST_SEQUENCES)
-            context['list_genes'] = LIST_GENES
+        if path_name == "/":
             contents = su.read_template_html_file("./html/INDEX.html").render(context=context)
         elif path_name == "/test": # when working with forms my self.path always comes with a question mark at the end
             contents = su.read_template_html_file("Ctest.html").render()
-        elif path_name =='/ping':
-            contents = su.read_template_html_file("./html/ping.html").render()
-        elif path_name=='/get':
-            number_sequence=arguments['sequence'][0]
-            contents = su.get(LIST_SEQUENCES,number_sequence)
+        elif path_name =='/listSpecies':
+            end = '/html/species'
+            contents = s_u.list_seqs(connection, end, Parameters, arguments, context)
+
         elif path_name == '/operation':
             sequence = arguments['sequence'][0]
             operation = arguments['operation'][0]
