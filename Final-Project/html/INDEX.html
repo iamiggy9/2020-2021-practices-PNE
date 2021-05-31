@@ -1,40 +1,42 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-</head>
-  <body style="background-color: #f5e9a9;">
-    <h1>Browsing Human and Vertebrates genome</h1>
-    <h2>BASIC Level Services</h2>
-    <hr>
-    <form action="listSpecies.html" method="get">
-    1)List of species in the genome database
-    <hr>
-
-        Limit:<input type="text" name="limit"> <br>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title></title>
+      </head>
+       <body style="background-color: coral;">
+        <h1>DATABASE</h1>
         <hr>
-
-        <input type="submit" value="Send">
-    </form>
-    <hr>
-    <form action="get" method="get">
-       2)Information about the karyotype:<br>
-        <hr>
-        Select the species:<input type="text" name="sequence"> <br>
-        <hr>
-        <input type="submit" value="Send">
-    </form>
-  <hr>
-    <form action="gene" method="get">
-        3) Chromosome Length:<br>
-        <hr>
-        Select the species:<input type="text" name="sequence"> <br>
-        <hr>
-        Select a chromosome:<input type="text" name="sequence"> <br>
-        <hr>
-        <input type="submit" value="Send">
-    </form>
-  <hr>
-
+        <form action="listSpecies" method="get">
+          1) List of species in the genome database
+          Limit: <input type="text" name="limit">
+          <input type="submit" value="SEND">
+        </form>
+        <form action="karyotype" method="get">
+          2) Information about de karyotype:
+          Select the species: <input type="text" name="species">
+          <input type="submit" value="SEND">
+        </form>
+        <form action="chromosomeLength" method="get">
+          3) Chromosome length:
+          Select the species: <input type="text" name="species"> <br>
+          Select the chromosome: <input type="text" name="chromosome">
+          <input type="submit" value="SEND">
+        </form>
+        <form action="geneSeq" method="get">
+          4) Gene sequence:
+          Select the gene: <input type="text" name="gene">
+          <input type="submit" value="SEND">
+        </form>
+        <form action="geneInfo" method="get">
+          5) Gene information:
+          Select the gene: <input type="text" name="gene">
+          <input type="submit" value="SEND">
+        </form>
+        <form action="geneCalc" method="get">
+          6) Gene calculations:
+          Select the gene: <input type="text" name="gene">
+          <input type="submit" value="SEND">
         </form>
       </body>
     </html>
