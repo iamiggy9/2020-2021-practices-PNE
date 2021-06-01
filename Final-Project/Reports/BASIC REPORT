@@ -1,0 +1,622 @@
+---> listSpecies endpoint
+test 1:
+input:
+    http://127.0.0.1:8080/listSpecies?limit=15
+output:
+        <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>DATABASE: LIST SPECIES</title>
+        </head>
+        <body style="background-color: #fcb0ff;">
+        <h4>Total species in the ensembl database:</h4> <p> 310</p>
+        <h4>Limit you have chosen: </h4> <p>15</p>
+        <h4>List of species:</h4>
+
+          <p>little spotted kiwi
+
+                Indian glassy fish
+
+                blue tit
+
+                narwhal
+
+                American beaver
+
+                lumpfish
+
+                Chinese hamster
+
+                channel bull blenny
+
+                Golden Hamster
+
+                wild yak
+
+                Siamese fighting fish
+
+                eastern happy
+
+                cape rock hyrax
+
+                Eurasian eagle-owl
+
+                Japanese quail
+                                </p>
+
+        <a href="/">Main page</a>
+        </body>
+    </html>
+
+test 2 :
+input:
+    http://127.0.0.1:8080/listSpecies?limit=1
+output:
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>DATABASE: LIST SPECIES</title>
+        </head>
+        <body style="background-color: #fcb0ff;">
+        <h4>Total species in the ensembl database:</h4> <p> 310</p>
+        <h4>Limit you have chosen: </h4> <p>1</p>
+        <h4>List of species:</h4>
+
+          <p>little spotted kiwi</p>
+
+        <a href="/">Main page</a>
+        </body>
+    </html>
+
+test 3 :
+input:
+    http://127.0.0.1:8080/listSpecies?limit=90
+output:
+      <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>DATABASE: LIST SPECIES</title>
+        </head>
+        <body style="background-color: #fcb0ff;">
+        <h4>Total species in the ensembl database:</h4> <p> 310</p>
+        <h4>Limit you have chosen: </h4> <p>90</p>
+        <h4>List of species:</h4>
+        <p>little spotted kiwi
+
+                Indian glassy fish
+
+                blue tit
+
+                narwhal
+
+                American beaver
+
+                lumpfish
+
+                Chinese hamster
+
+                channel bull blenny
+
+                Golden Hamster
+
+                wild yak
+
+                Siamese fighting fish
+
+                eastern happy
+
+                cape rock hyrax
+
+                Eurasian eagle-owl
+
+                Japanese quail
+
+                fugu
+
+                Asian bonytongue
+
+                blue-ringed sea krait
+
+                mouse
+
+                Agassiz's desert tortoise
+
+                lyretail cichlid
+
+                coho salmon
+
+                Oriental scops-owl
+
+                zebra mbuna
+
+                Arctic ground squirrel
+
+                clown anemonefish
+
+                koala
+
+                algerian mouse
+
+                sheep
+
+                mouse
+
+                dog
+
+                Spoon-billed sandpiper
+
+                Northern American deer mouse
+
+                burrowing owl
+
+                baker's yeast
+
+                Spotted gar
+
+                steppe mouse
+
+                Canada lynx
+
+                Polar bear
+
+                Amazon molly
+
+                tongue sole
+
+                platypus
+
+                Common snapping turtle
+
+                Western painted turtle
+
+                gray short-tailed opossum
+
+                Golden snub-nosed monkey
+
+                helmeted guineafowl
+
+                golden-line barbel
+
+                Sea squirt Ciona savignyi
+
+                Western Lowland Gorilla
+
+                northern pike
+
+                swamp eel
+
+                Indian peafowl
+
+                barramundi perch
+
+                meerkat
+
+                Chinese medaka
+
+                pig
+
+                Makobe Island cichlid
+
+                reedfish
+
+                Ryukyu mouse
+
+                red fox
+
+                tammar wallaby
+
+                central bearded dragon
+
+                vaquita
+
+                White-headed capuchin
+
+                alpaca
+
+                small Madagascar hedgehog
+
+                Angola colobus
+
+                Pig-tailed macaque
+
+                cattle
+
+                orbiculate cardinalfish
+
+                Eastern spot-billed duck
+
+                common carp hebao red
+
+                yellowtail amberjack
+
+                Brazilian guinea pig
+
+                Mexican tetra
+
+                ruff
+
+                domestic yak
+
+                zebra finch
+
+                Black snub-nosed monkey
+
+                Bengalese finch
+
+                Damara mole rat
+
+                Japanese medaka HdrR
+
+                Budgie
+
+                Philippine tarsier
+
+                Chacoan peccary
+
+                southern platyfish
+
+                common mallard
+
+                Swainson's thrush
+
+                elephant shark
+                              </p>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----> Karyotype endpoint
+test1:
+input:
+    http://127.0.0.1:8080/karyotype?species=human
+output:
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>DATABASE: KARYOTYPE</title>
+        </head>
+        <body style="background-color: lightpink;">
+        <h4>The names of the chromosomes are:</h4>
+
+         <p>1
+
+                2
+
+                3
+
+                4
+
+                5
+
+                6
+
+                7
+
+                8
+
+                9
+
+                10
+
+                11
+
+                12
+
+                13
+
+                14
+
+                15
+
+                16
+
+                17
+
+                18
+
+                19
+
+                20
+
+                21
+
+                22
+
+                X
+
+                Y
+
+                MT</p>
+
+        <br>
+        <a href="/">Main page</a>
+        </body>
+    </html>
+test 2:
+input:
+    http://127.0.0.1:8080/karyotype?species=dog
+output:
+        <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>DATABASE: KARYOTYPE</title>
+        </head>
+        <body style="background-color: lightpink;">
+        <h4>The names of the chromosomes are:</h4>
+
+         <p>1
+
+                2
+
+                3
+
+                4
+
+                5
+
+                6
+
+                7
+
+                8
+
+                9
+
+                10
+
+                11
+
+                12
+
+                13
+
+                14
+
+                15
+
+                16
+
+                17
+
+                18
+
+                19
+
+                20
+
+                21
+
+                22
+
+                23
+
+                24
+
+                25
+
+                26
+
+                27
+
+                28
+
+                29
+
+                30
+
+                31
+
+                32
+
+                33
+
+                34
+
+                35
+
+                36
+
+                37
+
+                38
+
+                X
+
+                MT</p>
+
+        <br>
+        <a href="/">Main page</a>
+        </body>
+    </html>
+test 3:
+input:
+    http://127.0.0.1:8080/karyotype?species=cat
+output:
+            <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>DATABASE: KARYOTYPE</title>
+        </head>
+        <body style="background-color: lightpink;">
+        <h4>The names of the chromosomes are:</h4>
+
+         <p>A1
+
+                A2
+
+                A3
+
+                B1
+
+                B2
+
+                B3
+
+                B4
+
+                C1
+
+                C2
+
+                D1
+
+                D2
+
+                D3
+
+                D4
+
+                E1
+
+                E2
+
+                E3
+
+                F1
+
+                F2
+
+                X
+
+                MT</p>
+
+        <br>
+        <a href="/">Main page</a>
+        </body>
+    </html>
+test 4 :
+input:
+     http://127.0.0.1:8080/karyotype?species=mouse
+output:
+         <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>DATABASE: KARYOTYPE</title>
+        </head>
+        <body style="background-color: lightpink;">
+        <h4>The names of the chromosomes are:</h4>
+
+         <p>1
+
+                2
+
+                3
+
+                4
+
+                5
+
+                6
+
+                7
+
+                8
+
+                9
+
+                10
+
+                11
+
+                12
+
+                13
+
+                14
+
+                15
+
+                16
+
+                17
+
+                18
+
+                19
+
+                X
+
+                Y
+
+                MT</p>
+
+        <br>
+        <a href="/">Main page</a>
+        </body>
+    </html>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------>Chromosome length endpoint
+test 1:
+input:
+    http://127.0.0.1:8080/chromosomeLength?species=human&chromosome=12
+output:
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>DATABASE: CHROMOSOME LENGHT</title>
+        </head>
+        <body style="background-color: powderblue;">
+        <h4>The length of the chromosome is :</h4>
+        <p>133275309</p>
+        <a href="/">Main page</a>
+        </body>
+    </html>
+
+test 2 :
+input:
+    http://127.0.0.1:8080/chromosomeLength?species=mouse&chromosome=1
+output:
+        <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>DATABASE: CHROMOSOME LENGHT</title>
+        </head>
+        <body style="background-color: powderblue;">
+        <h4>The length of the chromosome is :</h4>
+        <p>195154279</p>
+        <a href="/">Main page</a>
+        </body>
+    </html>
+
+test 3:
+input:
+    http://127.0.0.1:8080/chromosomeLength?species=dog&chromosome=5
+output:
+            <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>DATABASE: CHROMOSOME LENGHT</title>
+        </head>
+        <body style="background-color: powderblue;">
+        <h4>The length of the chromosome is :</h4>
+        <p>88915250</p>
+        <a href="/">Main page</a>
+        </body>
+    </html>
+
+test 4:
+input:
+    http://127.0.0.1:8080/chromosomeLength?species=cat&chromosome=A3
+output:
+                <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>DATABASE: CHROMOSOME LENGTH</title>
+        </head>
+        <body style="background-color: powderblue;">
+        <h4>The length of the chromosome is :</h4>
+        <p>143202405</p>
+        <a href="/">Main page</a>
+        </body>
+    </html>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+

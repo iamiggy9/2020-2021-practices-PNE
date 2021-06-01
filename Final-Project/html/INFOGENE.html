@@ -4,9 +4,9 @@
             <meta charset="UTF-8">
             <title>DATABASE: INFORMATION OF GENE</title>
         </head>
-        <body style="background-color: blue;">
+        <body style="background-color: indianred;">
         {% for key, value in context.dict_info.items() %}
-            <p>{{key}}: {{value}}</p>
+            <h4>{{key}}:</h4> <p>{{value}}</p>
         {% endfor %}
         <a href="/">Main page</a>
         </body>

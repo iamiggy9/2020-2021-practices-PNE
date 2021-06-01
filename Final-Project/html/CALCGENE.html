@@ -4,10 +4,10 @@
             <meta charset="UTF-8">
             <title>DATABASE: CALCULATIONS WITH GENES</title>
         </head>
-        <body style="background-color: blue;">
-        <p>Total length: {{context.length}}</p>
+        <body style="background-color: cornflowerblue;">
+        <h4>Total length: </h4> <p>{{context.length}}</p>
         {% for key, value in context.bases.items() %}
-            <p>{{key}}: {{value}}</p>
+            <h4>{{key}}:</h4> <p>{{value}}</p>
         {% endfor %}
         <a href="/">Main page</a>
         </body>

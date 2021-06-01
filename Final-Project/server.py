@@ -93,7 +93,6 @@ class TestHandler(http.server.BaseHTTPRequestHandler): # this class is inside th
                 response = connection.getresponse()
                 response_dict = json.loads(response.read().decode())
                 chromosome = arguments["chromosome"][0]
-                print(response_dict['top_level_region'])
                 for n in range(0, len(response_dict["top_level_region"])):
                     if chromosome == response_dict["top_level_region"][n]["name"]:
                         length = response_dict["top_level_region"][n]["length"]
@@ -115,7 +114,6 @@ class TestHandler(http.server.BaseHTTPRequestHandler): # this class is inside th
                 connection.request("GET", ENDPOINT + id + Parameters)
                 response = connection.getresponse()
                 response_dict = json.loads(response.read().decode())
-                # print(json.dumps(response_dict, indent=4, sort_keys=True))
                 info = response_dict["desc"].split(":")
                 context["dict_info"] = {
                     "Name": info[1],
@@ -132,7 +130,6 @@ class TestHandler(http.server.BaseHTTPRequestHandler): # this class is inside th
                 connection.request("GET", ENDPOINT + id + Parameters)
                 response = connection.getresponse()
                 response_dict = json.loads(response.read().decode())
-                # print(json.dumps(response_dict, indent=4, sort_keys=True))
                 sequence = Seq(response_dict["seq"])
                 dict_bases = Seq.count(sequence)
                 percentage = Seq.percentage(sequence)
