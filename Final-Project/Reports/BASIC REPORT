@@ -264,6 +264,23 @@ output:
 
                 elephant shark
                               </p>
+test 4 :
+input:
+    http://127.0.0.1:8080/listSpecies?limit=30000000000000000
+output:
+        <!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title>Bases Server</title>
+      </head>
+      <body style="background-color: red;">
+        <h1>ERROR</h1>
+        <p>Resource not available <p><br>
+      <p></p>
+        <a href="/">Main page</a>
+      </body>
+    </html>
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -----> Karyotype endpoint
 test1:
@@ -548,6 +565,23 @@ output:
         <a href="/">Main page</a>
         </body>
     </html>
+test 5:
+input:
+    http://127.0.0.1:8080/karyotype?species=
+output:
+            <!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title>Bases Server</title>
+      </head>
+      <body style="background-color: red;">
+        <h1>ERROR</h1>
+        <p>Resource not available <p><br>
+      <p></p>
+        <a href="/">Main page</a>
+      </body>
+    </html>
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------>Chromosome length endpoint
 test 1:
@@ -616,6 +650,24 @@ output:
         <p>143202405</p>
         <a href="/">Main page</a>
         </body>
+    </html>
+
+test 5:
+input:
+    http://127.0.0.1:8080/chromosomeLength?species=mouses&chromosome=500
+output:
+            <!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title>Bases Server</title>
+      </head>
+      <body style="background-color: red;">
+        <h1>ERROR</h1>
+        <p>Resource not available <p><br>
+      <p></p>
+        <a href="/">Main page</a>
+      </body>
     </html>
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

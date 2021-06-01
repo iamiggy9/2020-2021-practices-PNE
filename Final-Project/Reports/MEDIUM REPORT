@@ -53,6 +53,23 @@ output:
         <a href="/">Main page</a>
         </body>
     </html>
+test 4:
+input:
+    http://127.0.0.1:8080/geneSeq?gene=ADAA
+output:
+        <!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title>Bases Server</title>
+      </head>
+      <body style="background-color: red;">
+        <h1>ERROR</h1>
+        <p>Resource not available <p><br>
+      <p></p>
+        <a href="/">Main page</a>
+      </body>
+    </html>
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---> Gene Info endpoint
 
@@ -118,6 +135,24 @@ output:
              <a href="/">Main page</a>
             </body>
         </html>
+
+test 4:
+input:
+    http://127.0.0.1:8080/geneInfo?gene=FGFR33
+output:
+    <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bases Server</title>
+  </head>
+  <body style="background-color: red;">
+    <h1>ERROR</h1>
+    <p>Resource not available <p><br>
+  <p></p>
+    <a href="/">Main page</a>
+  </body>
+</html>
 --------------------------------------------------------------------------------------------------------------------------------------------
 ---------->Gene calculations endpoint
 test 1:
@@ -204,4 +239,24 @@ output:
         <a href="/">Main page</a>
         </body>
     </html>
+
+test 5 :
+input:
+    http://127.0.0.1:8080/geneCalc?gene=KDR1
+output:
+        <!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title>Bases Server</title>
+      </head>
+      <body style="background-color: red;">
+        <h1>ERROR</h1>
+        <p>Resource not available <p><br>
+      <p></p>
+        <a href="/">Main page</a>
+      </body>
+    </html>
+
+
 
