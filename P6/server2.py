@@ -77,7 +77,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler): # this class is inside th
         elif path_name == "/test": # when working with forms my self.path always comes with a question mark at the end
             contents = su.read_template_html_file("Ctest.html").render()
         elif path_name =='/ping':
-            contents = su.read_template_html_file("./html/ping.html").render()
+            contents = su.read_template_html_file("html/PING.html").render()
         elif path_name=='/get':
             number_sequence=arguments['sequence'][0]
             contents = su.get(LIST_SEQUENCES,number_sequence)
